@@ -1,0 +1,90 @@
+.cont{
+  background-image: url('https://i.imgur.com/f3Um1CV.jpg');
+  box-shadow: 1px 20px 30px 10px rgb(10, 1, 29), 1px 15px 60px 10px rgb(0, 2, 109);
+  background-size: cover;
+  max-width: 500px;
+  min-width: 100px;
+  padding: 20px 50px 20px 50px;
+  border-radius: 10px 10px 0 0;
+}
+#tipo{
+  color: rgb(115, 117, 116);
+}
+
+#eyes{
+  position: relative;
+  cursor: pointer;
+}
+#openeyes1{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+  display: block;
+}
+#openeyes2{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+  display: block;
+}
+#closeyes1{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+  display: none;
+}
+#closeyes2{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+  display: none;
+}
+
+/*Botão de cancelar*/
+#btn-cancel{
+  min-height: 30px;
+  min-width: 100%;
+  justify-content: center;
+}
+#btn-cancel{
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(81, 164, 236, 0.192);
+  box-shadow: 1px 10px 20px #000;
+  margin-top: -4px;
+}
+#btn-cancel:hover{
+  border-color: rgb(218, 214, 214);
+  background-color: rgba(159, 200, 236, 0.103);
+  box-shadow: 1px 10px 10px #000;
+  margin-top: -2px;
+}
+#btn-cancel:active{
+  border-color: rgb(65, 62, 62);
+  background-color: rgba(2, 11, 19, 0.103);
+  box-shadow: inset 1px 10px 20px #000;
+  margin-top: -2px;
+}
+/* Botão de cadastrar*/
+#btn-cadastrar{
+  min-height: 30px;
+  min-width: 100%;
+  justify-content: center;
+}
+#btn-cadastrar{
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(81, 164, 236, 0.192);
+  box-shadow: 1px 10px 20px #000;
+  margin-top: -4px;
+}
+#btn-cadastrar:hover{
+  border-color: rgb(218, 214, 214);
+  background-color: rgba(159, 200, 236, 0.103);
+  box-shadow: 1px 10px 10px #000;
+  margin-top: -2px;
+}
+#btn-cadastrar:active{
+  border-color: rgb(65, 62, 62);
+  background-color: rgba(2, 11, 19, 0.103);
+  box-shadow: inset 1px 10px 20px #000;
+  margin-top: -2px;
+}
