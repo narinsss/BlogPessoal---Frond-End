@@ -1,0 +1,35 @@
+.bg{
+  background-image: url(https://i.imgur.com/Ruqjl6Y.jpg);
+  background-size: cover;
+}
+
+.nav-link1{
+  font-weight: bold;
+  margin: 15px 0 0 15px;
+}
+.nav-link2{
+  margin-left: 15px;
+}
+
+.img-fluid{
+  margin-right: 8px;
+}
+
+.navbar-toggler{
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(81, 164, 236, 0.192);
+  box-shadow: 1px 10px 20px #000;
+  margin-top: -4px;
+}
+.navbar-toggler:hover{
+  border-color: rgb(218, 214, 214);
+  background-color: rgba(159, 200, 236, 0.103);
+  box-shadow: 1px 10px 10px #000;
+  margin-top: -2px;
+}
+.navbar-toggler:active{
+  border-color: rgb(65, 62, 62);
+  background-color: rgba(2, 11, 19, 0.103);
+  box-shadow: inset 1px 10px 20px #000;
+  margin-top: -2px;
+}

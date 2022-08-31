@@ -1,0 +1,30 @@
+.page-footer{
+  text-align: center;
+  background-image: url(https://i.imgur.com/Ruqjl6Y.jpg);
+  background-size: cover;
+  padding-top: 5px;
+}
+.footer-copyright{
+  background-color: #0000007e;
+}
+
+.bi-linkedin{
+  color: rgb(151, 122, 204);
+}
+.bi-linkedin:hover{
+  color: rgb(40, 96, 250);
+}
+
+.bi-github{
+  color: rgb(151, 122, 204);
+}
+.bi-github:hover{
+  color: rgb(130, 55, 214);
+}
+
+.bi-instagram{
+  color: rgb(151, 122, 204);
+}
+.bi-instagram:hover{
+  color: rgb(201, 47, 131);
+}
