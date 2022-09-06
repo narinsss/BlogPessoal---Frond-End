@@ -4,15 +4,15 @@
     <h2 class="text-center text-light">Cadastro</h2>
     <div class="form-group">
       <label for="nome" class="text-white mt-2">Nome</label>
-      <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+      <input [(ngModel)]= 'usuario.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
       <label for="usuario" class="text-white mt-2">Usuário</label>
-      <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+      <input [(ngModel)] = 'usuario.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
       <label for="foto" class="text-white mt-2">Link da Foto</label>
-      <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+      <input [(ngModel)] = 'usuario.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
       <!--Senha-->
       <label for="senha" class="text-white mt-2">Senha</label>
       <div class="d-flex" id="eyes">
-        <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+        <input (input)='confirmSenha($event)'  class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-eye-slash-fill"
           viewBox="0 0 16 16" id="openeyes1">
           <path
@@ -25,11 +25,11 @@
           <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
         </svg>
       </div>
-      <!--Confirma senha/-->
+      <!--Senha/-->
       <!--Confirma senha-->
       <label for="confirmSenha" class="text-white mt-2">Confirmar senha</label>
       <div class="d-flex" id="eyes">
-        <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+        <input [(ngModel)] = 'usuario.senha' class="form-control" type="password" name="confirmSenha" id="confirmsenha"
           placeholder="Confirme sua senha">
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
           class="bi bi-eye-slash-fill bg-white" viewBox="0 0 16 16" id="openeyes2">
@@ -46,15 +46,17 @@
       </div>
       <!--Confirma senha/-->
     </div>
-    <label for="tipo" class="text-white mt-2">Tipo de Usuário</label>
-    <select class="form-control" name="tipo" id="tipo">
+    <div class="form-group">
+      <label for="tipo" class="text-white mt-2">Tipo de Usuário</label>
+    <select class="form-control" name="tipo" id="tipo" (change)='tipoDeUsuario($event)'>
       <option>Selecione um tipo de usuário</option>
       <option value="normal">Normal</option>
       <option value="admin">Administrador</option>
     </select>
+    </div>
     <div class="d-block">
       <button class="btn mt-4 text-white" type="submit" id="btn-cancel" routerLink="/entrar">Cancelar</button>
-      <button class="btn mt-4 text-white mb-4" type="submit" id="btn-cadastrar">Cadastrar</button>
+      <button class="btn mt-4 text-white mb-4" type="submit" id="btn-cadastrar" (click)="cadastrar()">Cadastrar</button>
     </div>
   </div>
 </div>
