@@ -101,3 +101,7 @@
   background-color: rgba(131, 190, 241, 0.048);
   -webkit-box-shadow: inset 0 4px 10px -2px #000000a1;
 }
+
+.cadTema{
+  color: rgb(127, 208, 255);
+}
