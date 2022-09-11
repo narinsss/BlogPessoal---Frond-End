@@ -1,0 +1,107 @@
+.container-fluid{
+  /*background-image: url(https://i.imgur.com/Ruqjl6Y.jpg);*/
+  background-image: linear-gradient(to bottom,  #131e35, #131e35, #000000);
+}
+.sbv{
+  font-size: 50pt;
+}
+.p{
+  font-size: 18pt;
+}
+
+.nova{
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-image: url('https://i.imgur.com/Ruqjl6Y.jpg');
+  background-size: cover;
+  box-shadow: 1px 10px 20px #000;
+  margin: auto;
+  margin-right: 20px;
+  padding: 10px 15px 10px 15px;
+  color: #fff;
+  transition: padding 0.3s;
+}
+.nova:hover{
+  padding: 12px 17px 12px 17px;
+}
+.nova:active{
+  border: 1px solid #525050;
+  color: #807d7d;
+  padding: 10px 20px 10px 20px;
+}
+
+.ver{
+  border-top: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-image: url('https://i.imgur.com/WhtF13W.png');
+  background-size: cover;
+  margin: auto;
+  margin-right: 20px;
+  padding: 10px 15px 10px 15px;
+  color: #fff;
+  box-shadow: 0 4px 4px -2px #f7f7f7;
+  -webkit-box-shadow: inset 0 4px 10px -2px #ffffffa1;
+  transition: padding 0.3s;
+}
+.ver2{
+  text-decoration: none;
+  color: rgb(132, 140, 243);
+
+}
+
+.ver:hover{
+  border-top: 1px solid #ffffff;
+  padding: 12px 17px 12px 17px;
+}
+.ver:active{
+  border-top: 1px solid #525050;
+  padding: 10px 20px 10px 20px;
+}
+.ver2:hover{
+  text-decoration:underline;
+}
+
+.modal-content{
+  color: rgb(255, 255, 255);
+  background-image: url('https://i.imgur.com/f3Um1CV.jpg');
+  background-size: cover;
+  box-shadow: 1px 10px 15px #000000;
+  padding: 10px 15px 10px 15px;
+
+}
+
+.cancel{
+  border-top: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: #f7f7f70c;
+  padding: 10px 30px 10px 30px;
+  box-shadow: 0 4px 4px -2px #f7f7f7;
+  -webkit-box-shadow: inset 0 4px 10px -2px #ffffffa1;
+  transition: padding 0.3s;
+
+}
+.publi{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  outline: none;
+  transition: padding 0.3s;
+  background-color: rgba(131, 190, 241, 0.171);
+  box-shadow: 1px 10px 20px #000;
+}
+.publi:hover, .cancel:hover{
+  border-top: 1px solid #ffffff;
+  padding: 11px 32px 11px 32px;
+
+}
+.publi:active, .cancel:active{
+  padding: 10px 30px 10px 30px;
+  color: rgb(119, 117, 117);
+  box-shadow: 0 4px 4px -2px #1d1c1c;
+  background-color: rgba(131, 190, 241, 0.048);
+  -webkit-box-shadow: inset 0 4px 10px -2px #000000a1;
+}
+
+.cadTema{
+  color: rgb(127, 208, 255);
+}

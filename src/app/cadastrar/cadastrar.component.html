@@ -1,1 +1,62 @@
-<p>cadastrar works!</p>
+<div class="justify-content-center" id="page">
+  <img class="m-auto d-flex mt-4" src="https://i.imgur.com/YxVNsnM.png" width="140" height="140">
+  <div class="m-auto cont mt-4">
+    <h2 class="text-center text-light">Cadastro</h2>
+    <div class="form-group">
+      <label for="nome" class="text-white mt-2">Nome</label>
+      <input [(ngModel)]= 'usuario.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+      <label for="usuario" class="text-white mt-2">Usuário</label>
+      <input [(ngModel)] = 'usuario.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+      <label for="foto" class="text-white mt-2">Link da Foto</label>
+      <input [(ngModel)] = 'usuario.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+      <!--Senha-->
+      <label for="senha" class="text-white mt-2">Senha</label>
+      <div class="d-flex" id="eyes">
+        <input (input)='confirmSenha($event)'  class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-eye-slash-fill"
+          viewBox="0 0 16 16" id="openeyes1">
+          <path
+            d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z" />
+          <path
+            d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16" id="closeyes1">
+          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+          <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>
+      </div>
+      <!--Senha/-->
+      <!--Confirma senha-->
+      <label for="confirmSenha" class="text-white mt-2">Confirmar senha</label>
+      <div class="d-flex" id="eyes">
+        <input [(ngModel)] = 'usuario.senha' class="form-control" type="password" name="confirmSenha" id="confirmsenha"
+          placeholder="Confirme sua senha">
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+          class="bi bi-eye-slash-fill bg-white" viewBox="0 0 16 16" id="openeyes2">
+          <path
+            d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z" />
+          <path
+            d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-eye-fill"
+          viewBox="0 0 16 16" id="closeyes2">
+          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+          <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+        </svg>
+      </div>
+      <!--Confirma senha/-->
+    </div>
+    <div class="form-group">
+      <label for="tipo" class="text-white mt-2">Tipo de Usuário</label>
+    <select class="form-control" name="tipo" id="tipo" (change)='tipoDeUsuario($event)'>
+      <option>Selecione um tipo de usuário</option>
+      <option value="normal">Normal</option>
+      <option value="admin">Administrador</option>
+    </select>
+    </div>
+    <div class="d-block">
+      <button class="btn mt-4 text-white" type="submit" id="btn-cancel" routerLink="/entrar">Cancelar</button>
+      <button class="btn mt-4 text-white mb-4" type="submit" id="btn-cadastrar" (click)="cadastrar()">Cadastrar</button>
+    </div>
+  </div>
+</div>

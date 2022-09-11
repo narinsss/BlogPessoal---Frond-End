@@ -1,0 +1,82 @@
+<div class="container-fluid">
+
+  <div class="row d-flex align-items-center">
+    <div class="col-md-6 m-auto">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 text-white">
+          <h1 class="sbv">Seja bem-vinda(o)!</h1>
+          <h5 class="p">Fique a vontade para expôr seus pensamentos, planejamentos, ideias, seu dia, desabafos, receitas
+            e dicas de programação!
+            Sinta-se livre!</h5>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <button class="nova mr-3 mt-3" type="button" data-toggle="modal" data-target="#exampleModalCenter">Nova
+            postagem</button>
+          <button class="ver mr-3 mt-3" type="button"><a class="ver2" href="#publicacoes"> Ver postagens</a></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <img src="https://i.imgur.com/FwbMot2.png" alt="" width="500" height="500">
+    </div>
+  </div>
+</div>
+<!-- Parte das publicações-->
+<nav>
+  <div class="nav nav-tabs d-flex justify-content-center mb-5 mt-3" id="publicacoes" role="tablist">
+    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPublis-tab" data-toggle="tab"
+      href="#todasPublis" role="tab" aria-controls="nav-todasPublis" aria-selected="true">Todas as publicações</a>
+    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-publis-tab" data-toggle="tab" href="#publis"
+      role="tab" aria-controls="nav-publis" aria-selected="false">Minhas publicações</a>
+    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-publisTema-tab" data-toggle="tab"
+      href="#publisTema" role="tab" aria-controls="nav-publisTema" aria-selected="false">Publicações por tema</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="todasPublis" role="tabpanel" aria-labelledby="nav-todasPublis-tab">
+    aaaaaaaaaaaaa</div>
+  <div class="tab-pane fade" id="publis" role="tabpanel" aria-labelledby="nav-publis-tab">bbbbbbbbbb</div>
+  <div class="tab-pane fade" id="publisTema" role="tabpanel" aria-labelledby="nav-publisTema-tab">ccccccccc</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Todas as Publicações</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" class="form-control" id="titulo" placeholder="Digite um título">
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea type="text" class="form-control" name="texto" rows="3" id="texto"
+            placeholder="O que tens em mente?"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="texto">Escolha o tema ou <a  data-dismiss="modal" routerLink="/tema" class="cadTema">cadastre um novo</a></label>
+          <select name="tema" id="tema" class="form-control">
+            <option value="">Temas</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn cancel text-white">Cancelar</button>
+        <button type="button" class="btn publi text-white ">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
