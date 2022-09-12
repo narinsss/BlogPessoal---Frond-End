@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
-import { UsuarioLogin } from '../model/UsuarioLogin';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class TemaService {
 
   constructor(
@@ -18,7 +18,7 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  getAll(): Observable<Tema[]>{
+  getAllTema(): Observable<Tema[]>{
     return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
   }
 
