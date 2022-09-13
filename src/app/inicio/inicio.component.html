@@ -49,6 +49,8 @@
           <p class="card-text">{{item.texto}}</p>
           <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
           <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
+          <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-4">Alterar</a>
+          <a [routerLink]="['/postagem-del', item.id]" class="text-danger">Excluir</a>
         </div>
       </div>
     </div>
