@@ -1,9 +1,9 @@
-<div class="justify-content-center" id="page">
-  <img class="m-auto d-flex mt-4" src="https://i.imgur.com/YxVNsnM.png" width="140" height="140">
-  <div class="m-auto cont mt-4">
-    <h2 class="text-center text-light">Cadastro</h2>
+<div class="justify-content-center mb-5" id="page">
+  <img class="m-auto d-flex mt-2" src="https://i.imgur.com/YxVNsnM.png" width="90" height="90">
+  <div class="m-auto cont mt-3">
+    <h3 class="text-center text-light">Alterar Perfil</h3>
     <div class="form-group">
-      <label for="nome" class="text-white mt-2">Nome</label>
+      <label for="nome" class="text-white">Nome</label>
       <input [(ngModel)]= 'usuario.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
       <label for="usuario" class="text-white mt-2">Usuário</label>
       <input [(ngModel)] = 'usuario.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
@@ -47,7 +47,7 @@
       <!--Confirma senha/-->
     </div>
     <div class="form-group">
-      <label for="tipo" class="text-white mt-2">Tipo de Usuário</label>
+      <label for="tipo" class="text-white">Tipo de Usuário</label>
     <select class="form-control" name="tipo" id="tipo" (change)='tipoDeUsuario($event)'>
       <option>Selecione um tipo de usuário</option>
       <option value="normal">Normal</option>
@@ -55,8 +55,8 @@
     </select>
     </div>
     <div class="d-block">
-      <button class="btn mt-4 text-white" type="submit" id="btn-cancel" routerLink="/entrar">Cancelar</button>
-      <button class="btn mt-4 text-white mb-4" type="submit" id="btn-cadastrar" (click)="cadastrar()">Cadastrar</button>
+      <button class="btn mt-2 text-white" type="submit" id="btn-cancel" routerLink="/inicio">Cancelar</button>
+      <button class="btn mt-1 text-white mb-2" type="submit" id="btn-cadastrar" (click)="alterar()">Alterar</button>
     </div>
   </div>
 </div>

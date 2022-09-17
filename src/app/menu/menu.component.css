@@ -6,10 +6,10 @@
 }
 
 .nav-link1{
-  font-weight: bold;
   margin: auto;
   margin-left: 8px;
   margin-top: 5px;
+  font-size: 20px;
 }
 .nav-link2{
   margin-left: 10px;
@@ -20,14 +20,14 @@
   margin: auto;
   cursor: pointer;
   margin-left: 20px;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   transition: width 0.3s, height 0.3s;
 
 }
 .img-fluid:hover{
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   box-shadow: 1px 10px 20px rgb(0, 0, 0);
   margin-top: 10px;
 }

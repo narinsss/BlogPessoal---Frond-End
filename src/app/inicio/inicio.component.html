@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid partebonita">
 
   <div class="row d-flex align-items-center">
     <div class="col-md-6 m-auto">
@@ -21,67 +21,169 @@
       </div>
     </div>
 
-    <div class="col-md-6 d-flex justify-content-center">
+    <div class="navbar navbar-expand-lg col-md-6 justify-content-center">
       <img src="https://i.imgur.com/FwbMot2.png" alt="" width="500" height="500">
+      <button class="navbar-toggler text-white pl-4 pr-4 pt-2 pb-2" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation" style="font-size: 16px;">Sobre mim</button>
     </div>
   </div>
 </div>
-<!-- Parte das publicações-->
-<nav>
-  <div class="nav nav-tabs d-flex justify-content-center mb-5 mt-3" id="publicacoes" role="tablist">
-    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPublis-tab" data-toggle="tab"
-      href="#todasPublis" role="tab" aria-controls="nav-todasPublis" aria-selected="true">Todas as publicações</a>
-    <a (click)='findByIdUsuario()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-publis-tab" data-toggle="tab" href="#publis"
-      role="tab" aria-controls="nav-publis" aria-selected="false">Minhas publicações</a>
-    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-publisTema-tab" data-toggle="tab"
-      href="#publisTema" role="tab" aria-controls="nav-publisTema" aria-selected="false">Publicações por tema</a>
-  </div>
-</nav>
 
-<div class="tab-content" id="nav-tabContent">
 
-  <div class="tab-pane fade show active " id="todasPublis" role="tabpanel" aria-labelledby="nav-todasPublis-tab">
-    <div class="card-columns d-flex justify-content-center">
-      <div class="card text-center m-2" *ngFor='let item of listaPostagens'>
-        <div class="card-body">
-          <h5 class="card-title">{{item.titulo}}</h5>
-          <small class="text-muted">Tema: {{item.tema.categoria}}</small>
-          <p class="card-text">{{item.texto}}</p>
-          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-          <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
-          <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-4">Alterar</a>
-          <a [routerLink]="['/postagem-del', item.id]" class="text-danger">Excluir</a>
+<div class="container-fluid d-flex justify-content-center mb-5 mt-3">
+  <div class="col-md-10">
+    <nav class="nav nav-tabs " id="publicacoes" role="tablist">
+      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPublis-tab" data-toggle="tab"
+        href="#todasPublis" role="tab" aria-controls="nav-todasPublis" aria-selected="true">Todas as publicações</a>
+      <a (click)='findByIdUsuario()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-publis-tab"
+        data-toggle="tab" href="#publis" role="tab" aria-controls="nav-publis" aria-selected="false">Minhas
+        publicações</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-publisTema-tab" data-toggle="tab"
+        href="#publisTema" role="tab" aria-controls="nav-publisTema" aria-selected="false">Publicações por tema</a>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="todasPublis" role="tabpanel" aria-labelledby="nav-todasPublis-tab">
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+          <div class="col-md-5">
+              <input type="text" class="form-control search" id="titulo" placeholder="Qual publicação deseja encontrar?" [(ngModel)]='tituloPost' (keyup)= 'findByTituloPostagem()'>
+          </div>
+        </div>
+        <div class="card" style="border: none;">
+          <div class="card text-center m-2" *ngFor='let item of listaPostagens | orderBy: key : reverse'>
+            <div class="card-body">
+              <h3 class="card-title">{{item.titulo}}</h3>
+              <img class="justify-content-center w-100 mt-3" alt="..." src="{{item.foto}}" alt="Foto da postagem"
+                style="max-width: 600px; max-height: 600px;">
+              <small class="text-muted d-block mt-2">Tema: {{item.tema.categoria}}</small>
+              <p class="card-text mt-3">{{item.texto}}</p>
+              <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                  'HH:mm'}}</small></p>
+              <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
+              <hr class="ml-4 mr-4 mt-4">
+              <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-4">Alterar</a>
+              <a [routerLink]="['/postagem-del', item.id]" class="text-danger" *ngIf="authService.adm()">Excluir</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tab-pane fade" id="publis" role="tabpanel" aria-labelledby="nav-publis-tab">
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+          <div class="col-md-5">
+              <input type="text" class="form-control search" id="titulo" placeholder="Qual publicação deseja encontrar?" [(ngModel)]='tituloPost' (keyup)= 'findByTituloPostagem()'>
+          </div>
+        </div>
+        <div class="card" style="border: none;">
+          <div class="card text-center p-8 m-2" *ngFor='let item of usuario.postagem  | orderBy: key : reverse'>
+            <div class="card-body">
+              <h3 class="card-title">{{item.titulo}}</h3>
+              <img class="justify-content-center" alt="..." src="{{item.foto}}" alt="Foto da postagem"
+                style="max-width: 500px; max-height: 500px;">
+              <small class="text-muted d-block mt-2">Tema: {{item.tema.categoria}}</small>
+              <p class="card-text mt-3">{{item.texto}}</p>
+              <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                  'HH:mm'}}</small></p>
+                  <hr class="ml-4 mr-4 mt-4">
+              <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-4">Alterar</a>
+              <a [routerLink]="['/postagem-del', item.id]" class="text-danger" *ngIf="authService.adm()">Excluir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="publisTema" role="tabpanel" aria-labelledby="nav-publisTema-tab">
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+          <div class="col-md-5">
+              <input type="text" class="form-control search" id="titulo" placeholder="Qual publicação deseja encontrar?" [(ngModel)]='nomeTema' (keyup)= 'findByNomeTema()'>
+          </div>
+        </div>
+        <div class="card m-2" style="border: none;" *ngFor="let tema of listaTemas | orderBy: key : reverse">
+          <div class="card text-center" *ngFor="let tema of tema.postagem">
+            <div class="card-body">
+              <h3 class="card-title">{{tema.titulo}}</h3>
+              <img class="justify-content-center" alt="..." src="{{tema.foto}}" alt="Foto da postagem"
+                style="max-width: 500px; max-height: 500px;">
+              <p class="card-text mt-3">{{tema.texto}}</p>
+              <p class="card-text"><small class="text-muted">{{tema.data | date: 'dd/MM/yyyy'}} às {{tema.data | date:
+                  'HH:mm'}}</small></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <div class="tab-pane fade" id="publis" role="tabpanel" aria-labelledby="nav-publis-tab">
-    <div class="card-columns d-flex justify-content-center">
-      <div class="card text-center" *ngFor='let item of usuario.postagem'>
-        <div class="card-body">
-          <h5 class="card-title">{{item.titulo}}</h5>
-          <small class="text-muted">Tema: {{item.tema.categoria}}</small>
-          <p class="card-text">{{item.texto}}</p>
-          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+  <div class="navbar-expand-lg col-md-2 mb-3">
+    <img class="m-auto d-flex mt-4" src="https://i.imgur.com/YxVNsnM.png" width="140" height="140">
+    <aside class="about text-center collapse navbar-collapse mt-3" id="navbarSupportedContent">
+      <div class="card">
+        <div class="card-body w-100 mt-3 p-1 m-0">
+          <h5 class="card-title text-center">About me</h5>
+          <img src="https://i.imgur.com/SWq0MDp.jpg" class="card-img-top w-100" alt="...">
+          <h5 class="card-title mt-2">Marina Rosa</h5>
+          <p class="card-text text-justify" style="font-size: 13px;">Sou estudante de Análise e desenvolvimento de
+            Sistemas, estudei por
+            algum tempo programação em diversas plataformas até encontrar a Generation Brasil, que me possibilitou ter
+            companhia e mentores valiosos. Hoje sou desenvolvedora FullStack Java, e estou testando meus
+            conhecimentos
+            em busca de uma oportunidade para mostrar que posso e consigo vencer novos desafios. </p>
+          <hr class="ml-4 mr-4">
+          <h5 class="card-title">Músicas</h5>
+          <ul class="list-group list-group-flush">
+            <a
+              href="https://www.youtube.com/watch?v=pFjdfjrtf1Q&list=RDpFjdfjrtf1Q&start_radio=1&ab_channel=PentatonixVEVO">Pentatonix
+              - That's Christmas to Me</a>
+            <a href="https://www.youtube.com/watch?v=9ZDAYg196x8&ab_channel=Audioslave-Topic">Audioslave - I'm the
+              Highway</a>
+            <a href="https://www.youtube.com/watch?v=-M7vOnlcLbo&ab_channel=KornVEVO">Korn - Word up!</a>
+          </ul>
+          <hr class="ml-4 mr-4">
+          <h5 class="card-title">Melhores coisas</h5>
+          <ul class="ul list-group list-group-flush text-left">
+            <li style="list-style: none;">
+              <img src="https://img.icons8.com/color/48/000000/film-reel.png" height="33px" width="33px" />
+              Repetir séries, filmes e desenhos
+            </li>
+            <li style="list-style: none;">
+              <img
+                src="https://img.icons8.com/external-filled-outline-02-chattapat-/64/000000/external-killer-horror-filled-outline-02-chattapat-.png"
+                height="33px" width="33px" />
+              Ver documentários de serial killers
+            </li>
+            <li style="list-style: none;">
+              <img
+                src="https://img.icons8.com/external-mixed-kendis-lasman/64/000000/external-gym-love-family-mixed-mixed-kendis-lasman-2.png"
+                height="33px" width="33px" />
+              Academia e dançar
+            </li>
+            <li style="list-style: none;">
+              <img src="https://img.icons8.com/stickers/100/000000/code.png" height="33px" width="33px" />
+              Um pc rápido
+            </li>
+            <li style="list-style: none;">
+              <img src="https://img.icons8.com/fluency/48/000000/filled-like.png" height="33px" width="33px" />
+              Passar tempo com meu namorado
+            </li>
+            <li style="list-style: none;">
+              <img src="https://img.icons8.com/plasticine/100/000000/chocolate-bar.png" height="33px" width="33px" />
+              Chocolate com amendoim
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </aside>
   </div>
 
-  <div class="tab-pane fade" id="publisTema" role="tabpanel" aria-labelledby="nav-publisTema-tab">
-    <div class="card-columns d-flex justify-content-center" *ngFor="let tema of listaTemas">
-      <div class="card text-center" *ngFor="let tema of tema.postagem">
-        <div class="card-body">
-          <h5 class="card-title">{{tema.titulo}}</h5>
-          <p class="card-text">{{tema.texto}}</p>
-          <p class="card-text"><small class="text-muted">{{tema.data | date: 'dd/MM/yyyy'}} às {{tema.data | date: 'HH:mm'}}</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
+
+
+
 
 
 <!-- Modal -->
@@ -100,6 +202,11 @@
           <label for="titulo">Título</label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
             placeholder="Digite um título">
+        </div>
+        <div class="form-group">
+          <label for="tipo">Adicione uma imagem</label>
+          <input [(ngModel)]='postagem.foto' type="text" id="tipo" class="form-control"
+            placeholder="Link de uma imagem">
         </div>
         <div class="form-group">
           <label for="texto">Texto</label>
@@ -122,4 +229,3 @@
       </div>
     </div>
   </div>
-</div>

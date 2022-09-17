@@ -20,8 +20,8 @@
 }
 .bi-linkedin:hover{
   color: rgb(40, 96, 250);
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }
 
 .bi-github{
@@ -33,8 +33,8 @@
 }
 .bi-github:hover{
   color: rgb(130, 55, 214);
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }
 
 .bi-instagram{
@@ -46,6 +46,6 @@
 }
 .bi-instagram:hover{
   color: rgb(201, 47, 131);
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }

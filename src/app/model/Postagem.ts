@@ -6,6 +6,7 @@ import { Usuario } from "./Usuario"
   public titulo: string
   public texto: string
   public data: Date
+  public foto: string
   public usuario: Usuario
   public tema: Tema
 }
